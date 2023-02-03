@@ -1,0 +1,23 @@
+-cp src
+
+# Package name that locates in the path set in --class-path, for example org.example.MinecraftPlugin
+snirozu
+
+# The resource file that will be included inside JAR
+-resource src/resources/plugin.yml@plugin.yml
+#--resource src/resources/config.yml@config.yml
+
+# This will compile this plugin to the bin/HaxeHello.jar
+# Using JVM instead of Java because Consumer class fucks up in it lol
+--jvm bin/HaxeHello.jar
+
+#-c-arg -Xlint:deprecation
+
+# Will not be included in JAR
+--java-lib lib/compile
+
+# Will be included in JAR
+# IMPORTANT: You should also add packages to the "addLibrary" array in IncludeJars.hx
+--java-lib lib/implementation
+
+--cmd haxe -main IncludeJars --interp

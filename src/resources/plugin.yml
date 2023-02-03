@@ -1,0 +1,9 @@
+main: snirozu.Main
+name: HaxeHello
+version: 1.0
+author: Snirozu
+api-version: 1.13
+
+commands:
+  hellohaxe:
+    description: "Sends Hello World to the sender"
